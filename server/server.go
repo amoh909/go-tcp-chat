@@ -15,7 +15,7 @@ func handleConnection(conn net.Conn) {
 			fmt.Printf("Client %s disconnected\n", conn.RemoteAddr())
 			break
 		}
-		fmt.Printf("Received message: %s", message)
+		fmt.Printf("Client %s: %s", conn.RemoteAddr(), message)
 		conn.Write([]byte("Echo: " + message))
 	}
 }
