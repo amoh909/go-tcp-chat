@@ -35,6 +35,7 @@ func main() {
 			fmt.Println("Failed to accept connection:", err)
 			continue
 		}
+		fmt.Printf("New connection from %s\n", conn.RemoteAddr())
 		go handleConnection(conn)
 	}
 }
